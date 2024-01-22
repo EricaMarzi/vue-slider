@@ -17,7 +17,8 @@ const app = createApp({
     data(){
         return {
             pictures,
-            currentIndex: 0
+            currentIndex: 0,
+            autoplay: null
         }  
     },
     computed: {
@@ -29,22 +30,22 @@ const app = createApp({
         }
     },
     methods: {
-        goPrev(){
-            if(this.isFirstIndex) {
-                this.currentIndex = this.pictures.length -1
+        setCurrentIndex(target){
+            if(target === "next") {
+                if (this.isLastIndex) this.currentIndex = 0
+                else this.currentIndex++
             } else {
-                this.currentIndex--
-            }
-        },
-        
-        goNext(){
-            if (this.isLastIndex) {
-                this.currentIndex = 0
-            } else {
-                this.currentIndex++
+                if(this.isFirstIndex) this.currentIndex = this.pictures.length -1
+                else this.currentIndex--
             }
         }
-    }
+    },
+    mounted(){
+        //TODO funzione per autoplay
+        this.autoplay = setInterval (() => {
+            this.setCurrentIndex("next")
+        }, 3000)
+    } 
 })
 
 

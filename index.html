@@ -33,7 +33,7 @@
   <div id="root" class="container">
     <div id="carousel">
       <!-- Prev button -->
-      <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button" @click="goPrev"></i>
+      <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button" @click="setCurrentIndex('prev')"></i>
 
       <!-- Gallery -->
       <div class="gallery">
@@ -47,7 +47,7 @@
       </div>
 
       <!-- next button -->
-      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button" @click="goNext"></i>
+      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button" @click="setCurrentIndex('next')"></i>
     </div>
 
     <!-- Thumbnails -->
