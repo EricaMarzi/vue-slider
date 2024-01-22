@@ -12,7 +12,14 @@ Partendo dal markup della versione svolta in js plain, rifare lo slider ma quest
 */
 
 const {createApp} = Vue
-const app = createApp({})
+
+const app = createApp({
+    data(){
+        return {
+            pictures
+        }  
+    }
+})
 
 
 app.mount('#root')
