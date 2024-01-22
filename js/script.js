@@ -19,6 +19,31 @@ const app = createApp({
             pictures,
             currentIndex: 0
         }  
+    },
+    computed: {
+        isFirstIndex(){
+            return this.currentIndex === 0
+        },
+        isLastIndex(){
+            return this.currentIndex === this.pictures.length -1
+        }
+    },
+    methods: {
+        goPrev(){
+            if(this.isFirstIndex) {
+                this.currentIndex = this.pictures.length -1
+            } else {
+                this.currentIndex--
+            }
+        },
+        
+        goNext(){
+            if (this.isLastIndex) {
+                this.currentIndex = 0
+            } else {
+                this.currentIndex++
+            }
+        }
     }
 })
 
