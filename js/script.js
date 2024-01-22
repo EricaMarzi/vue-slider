@@ -38,13 +38,18 @@ const app = createApp({
                 if(this.isFirstIndex) this.currentIndex = this.pictures.length -1
                 else this.currentIndex--
             }
+        },
+        stopAutoplay(){
+            clearInterval(this.autoplay)
+        },
+        startAutoplay(){
+            this.autoplay = setInterval (() => {
+                this.setCurrentIndex("next")
+            }, 3000)
         }
     },
     mounted(){
-        //TODO funzione per autoplay
-        this.autoplay = setInterval (() => {
-            this.setCurrentIndex("next")
-        }, 3000)
+        this.startAutoplay()
     } 
 })
 
