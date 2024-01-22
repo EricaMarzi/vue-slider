@@ -16,7 +16,8 @@ const {createApp} = Vue
 const app = createApp({
     data(){
         return {
-            pictures
+            pictures,
+            currentIndex: 0
         }  
     }
 })

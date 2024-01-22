@@ -37,7 +37,7 @@
 
       <!-- Gallery -->
       <div class="gallery">
-        <figure v-for="pic in pictures" >
+        <figure v-for="(pic, i) in pictures">
           <figcaption>
             <h2>{{pic.name}}</h2>
             <h3>{{pic.description}}</h3>
@@ -52,7 +52,7 @@
 
     <!-- Thumbnails -->
     <div id="thumbnails">
-      <img v-for="pic in pictures" :src="`img/${pic.image}`" :alt="pic.name" class="active">
+      <img v-for="(pic, i) in pictures" :src="`img/${pic.image}`" :alt="pic.name" :class="{active: i === currentIndex}">
     </div>
 
     <!-- <div class="autoplay-controls">
