@@ -37,7 +37,7 @@
 
       <!-- Gallery -->
       <div class="gallery">
-        <figure v-for="(pic, i) in pictures">
+        <figure v-for="(pic, i) in pictures" v-show="i === currentIndex">
           <figcaption>
             <h2>{{pic.name}}</h2>
             <h3>{{pic.description}}</h3>
